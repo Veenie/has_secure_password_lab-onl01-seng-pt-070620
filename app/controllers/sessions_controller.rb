@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
  def new
-end
+ end
  
  def create
     user = User.find_by(name: params[:user][:name])
@@ -8,4 +8,7 @@ end
     return redirect_to(controller: 'sessions', action: 'new') unless user.save
     session[:user_id] = user.id
   end
+  
+  
+  
 end
